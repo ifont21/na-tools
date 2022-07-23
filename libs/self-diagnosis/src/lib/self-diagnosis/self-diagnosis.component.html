@@ -1,0 +1,57 @@
+<section class="flex w-full h-full">
+    <div class="basis-3/4 px-10 pt-12 pb-8">
+        <header class="mb-24 w-2/3">
+            <h1 class="text-4xl font-semibold tracking-tight font-display">Self Diagnosis: Index of Digital transformation of the
+                organization</h1>
+        </header>
+
+        <div class="flex justify-center items-center">
+            <div class="flex flex-col space-y-20">
+                <div class="inline-flex space-x-2 text-3xl tracking-tight">
+                    <span class="font-bold">Q1.</span>
+                    <p class="text-gray-600">We know and understand our current and potential customers</p>
+                </div>
+
+                <div class="self-center">
+                    <app-ui-range-selection></app-ui-range-selection>
+                </div>
+
+                <div class="self-start flex space-x-4">
+                    <button
+                        class="flex items-center space-x-2 border border-gray-400 py-3 px-4 rounded-xl text-gray-500">
+                        <svg-icon src="assets/left-arrow.svg" class="w-4 h-auto fill-gray-500" [applyClass]="true">
+                        </svg-icon>
+                        <span class="font-semibold">previous</span>
+                    </button>
+                    <button class="flex items-center space-x-6 bg-blue-800 py-3 px-4 rounded-xl text-white">
+                        <span class="font-semibold">NEXT</span>
+                        <svg-icon src="assets/right-arrow.svg" class="w-4 mr-4 h-auto fill-white" [applyClass]="true">
+                        </svg-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <aside class="basis-1/4 bg-sky-50 px-8 py-12 flex flex-col space-y-8">
+        <h2 class="text-gray-500 font-semibold text-2xl">Self Diagnosis: Index of Digital transformation of the
+            organization</h2>
+        <p class="text-gray-500 text-lg">Your score will be shown after the survey</p>
+
+        <div>
+            <h3 class="text-gray-600 font-bold text-lg">Questions</h3>
+            <span class="text-2xl text-gray-500 font-light">19</span>
+        </div>
+
+        <div>
+            <h3 class="text-gray-600 font-bold text-lg">Completion time</h3>
+            <span class="text-2xl text-gray-500 font-light">3 mins</span>
+        </div>
+
+        <div>
+            <h3 class="text-gray-600 font-bold text-lg">Completion Rate</h3>
+            <span>5%</span>
+            <span>1/10</span>
+        </div>
+    </aside>
+</section>

@@ -4,10 +4,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app.routes';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, HttpClientModule, AngularSvgIconModule.forRoot()],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    AngularSvgIconModule.forRoot(),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

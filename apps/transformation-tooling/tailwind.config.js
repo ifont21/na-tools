@@ -7,6 +7,10 @@ module.exports = {
     ...createGlobPatternsForDependencies(__dirname),
   ],
   theme: {
+    fontFamily: {
+      display: ['Poppins', 'Arial', 'sans-serif'],
+      body: ['Inter', 'Arial', 'sans-serif'],
+    },
     extend: {},
   },
   plugins: [],

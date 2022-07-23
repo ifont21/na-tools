@@ -1,36 +1,45 @@
 <div class="flex min-h-screen">
-    <nav class="flex-none w-72 border border-gray-200">
+    <nav class="flex-none w-72 border-r border-gray-200">
         <div class="py-14 text-center">
-            <h1 class="font-semibold text-3xl">DT Tools</h1>
+            <h1 class="font-semibold text-3xl font-display">DT Tools</h1>
         </div>
         <ul>
-            <li>
-                <a href="" class="flex items-center p-6">
-                    <svg-icon src="assets/evaluation-exam.svg" class="w-7 mr-4 fill-gray-500" [applyClass]="true"></svg-icon>
-                    <span class="text-gray-600">Self Diagnosis</span>
+            <li class="block pr-10">
+                <a routerLink="self-diagnosis" class="flex items-center py-4 px-6 hover:bg-sky-100 hover:rounded-r-xl"
+                    routerLinkActive="active">
+                    <svg-icon src="assets/evaluation-exam.svg" class="active__icon w-7 mr-4 fill-gray-500"
+                        [applyClass]="true">
+                    </svg-icon>
+                    <span class="active__text text-gray-500 text-sm font-semibold">Self Diagnosis</span>
                 </a>
             </li>
-            <li>
-                <a href="" class="flex items-center p-6">
-                    <svg-icon src="assets/evaluation-exam.svg" class="w-7 mr-4 fill-gray-500" [applyClass]="true"></svg-icon>
-                    <span class="text-gray-600">Tool 2</span>
+            <li class="block pr-10">
+                <a href="" class="flex items-center py-4 px-6 hover:bg-sky-100 hover:rounded-r-xl"
+                    routerLinkActive="active">
+                    <svg-icon src="assets/evaluation-exam.svg" class="w-7 mr-4 fill-gray-500" [applyClass]="true">
+                    </svg-icon>
+                    <span class="text-gray-500 text-sm font-semibold">Tool 2</span>
                 </a>
             </li>
-            <li>
-                <a href="" class="flex items-center p-6">
-                    <svg-icon src="assets/evaluation-exam.svg" class="w-7 mr-4 fill-gray-500" [applyClass]="true"></svg-icon>
-                    <span class="text-gray-600">Tool 3</span>
+            <li class="block pr-10">
+                <a href="" class="flex items-center py-4 px-6 hover:bg-sky-100 hover:rounded-r-xl"
+                    routerLinkActive="active">
+                    <svg-icon src="assets/evaluation-exam.svg" class="w-7 mr-4 fill-gray-500" [applyClass]="true">
+                    </svg-icon>
+                    <span class="text-gray-500 text-sm font-semibold">Tool 3</span>
                 </a>
             </li>
-            <li>
-                <a href="" class="flex items-center p-6">
-                    <svg-icon src="assets/evaluation-exam.svg" class="w-7 mr-4 fill-gray-500" [applyClass]="true"></svg-icon>
-                    <span class="text-gray-600">Tool 4</span>
+            <li class="block pr-10">
+                <a href="" class="flex items-center py-4 px-6 hover:bg-sky-100 hover:rounded-r-xl"
+                    routerLinkActive="active">
+                    <svg-icon src="assets/evaluation-exam.svg" class="w-7 mr-4 fill-gray-500" [applyClass]="true">
+                    </svg-icon>
+                    <span class="text-gray-500 text-sm font-semibold">Tool 4</span>
                 </a>
             </li>
         </ul>
     </nav>
-    <main class="flex-auto">
-        something here about a survey
+    <main class="flex-auto min-h-screen">
+        <router-outlet></router-outlet>
     </main>
 </div>
