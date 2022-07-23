@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "transformation-tooling": "apps/transformation-tooling",
+    "transformation-tooling-e2e": "apps/transformation-tooling-e2e"
+  }
+}
