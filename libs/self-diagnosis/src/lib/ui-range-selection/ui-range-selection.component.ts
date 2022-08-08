@@ -1,62 +1,49 @@
-import { Component, NgModule } from '@angular/core';
+import { UiRangePipeModule } from '../ui-range.pipe';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  NgModule,
+  Output,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-ui-range-selection',
-  template: `<div class="w-full flex border h-12 border-gray-400 rounded-lg">
+  template: `<div class="w-full flex h-12">
     <div
-      class="flex-1 flex justify-center items-center border-r border-gray-400"
+      *ngFor="let item of amountOfItems | appUIRange"
+      class="flex-1 flex justify-center items-center first:border-l first:rounded-l-lg last:rounded-r-lg border-t border-b border-r border-gray-400 cursor-pointer"
+      (click)="selectedChange.emit(item)"
+      [ngClass]="
+        item === selected
+          ? 'bg-emerald-700 border-t-0 border-b-0'
+          : 'hover:bg-emerald-700/25'
+      "
     >
-      1
+      <span
+        class="text-base text-gray-500 font-semibold"
+        [ngClass]="item === selected ? 'text-white text-xl' : ''"
+        >{{ item }}</span
+      >
     </div>
-    <div
-      class="flex-1 flex justify-center items-center border-r border-gray-400"
-    >
-      2
-    </div>
-    <div
-      class="flex-1 flex justify-center items-center border-r border-gray-400"
-    >
-      3
-    </div>
-    <div
-      class="flex-1 flex justify-center items-center border-r border-gray-400"
-    >
-      4
-    </div>
-    <div
-      class="flex-1 flex justify-center items-center border-r border-gray-400"
-    >
-      5
-    </div>
-    <div
-      class="flex-1 flex justify-center items-center border-r border-gray-400"
-    >
-      6
-    </div>
-    <div
-      class="flex-1 flex justify-center items-center border-r border-gray-400"
-    >
-      7
-    </div>
-    <div
-      class="flex-1 flex justify-center items-center border-r border-gray-400"
-    >
-      8
-    </div>
-    <div
-      class="flex-1 flex justify-center items-center border-r border-gray-400"
-    >
-      9
-    </div>
-    <div class="flex-1 flex justify-center items-center">10</div>
   </div>`,
   styles: [],
 })
-export class UiRangeSelectionComponent {}
+export class UiRangeSelectionComponent {
+  @Input()
+  amountOfItems = 10;
+
+  @Input()
+  selected = 0;
+
+  @Output()
+  selectedChange: EventEmitter<number> = new EventEmitter<number>();
+
+}
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule, UiRangePipeModule],
   declarations: [UiRangeSelectionComponent],
   exports: [UiRangeSelectionComponent],
 })

@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@transformation/interaction-sdk": ["libs/interaction-sdk/src/index.ts"],
       "@transformation/self-diagnosis": ["libs/self-diagnosis/src/index.ts"]
     }
   },

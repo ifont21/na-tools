@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { SelfDiagnosisComponentModule } from '@transformation/self-diagnosis';
+import { SelfDiagnosisContainerComponentModule } from '@transformation/self-diagnosis';
 
 @NgModule({
-  imports: [SelfDiagnosisComponentModule],
+  imports: [SelfDiagnosisContainerComponentModule],
 })
 export class SelfDiagnosisBundleModule {}
