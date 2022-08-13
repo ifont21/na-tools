@@ -5,6 +5,7 @@ import {
   Input,
   NgModule,
   OnChanges,
+  OnInit,
   Output,
   SimpleChanges,
 } from '@angular/core';
@@ -20,7 +21,7 @@ import { UiResultComponentModule } from '../ui-result/ui-result.component';
   templateUrl: './self-diagnosis.component.html',
   styles: [],
 })
-export class SelfDiagnosisComponent implements OnChanges {
+export class SelfDiagnosisComponent implements OnInit, OnChanges {
   currentRate = 0;
 
   @Input()
@@ -37,6 +38,10 @@ export class SelfDiagnosisComponent implements OnChanges {
 
   @Output()
   completeSurvey: EventEmitter<number> = new EventEmitter<number>();
+
+  ngOnInit(): void {
+    this.startSurvey.emit();
+  }
 
   ngOnChanges({ survey }: SimpleChanges): void {
     const currentSurvey: SelfDiagnosisInteractionState<Question> | undefined =

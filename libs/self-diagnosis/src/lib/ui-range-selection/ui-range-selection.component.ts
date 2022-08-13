@@ -13,17 +13,17 @@ import { CommonModule } from '@angular/common';
   template: `<div class="w-full flex h-12">
     <div
       *ngFor="let item of amountOfItems | appUIRange"
-      class="flex-1 flex justify-center items-center first:border-l first:rounded-l-lg last:rounded-r-lg border-t border-b border-r border-gray-400 cursor-pointer"
+      class="flex-1 flex justify-center items-center first:border-l first:rounded-l-lg last:rounded-r-lg border-t border-b border-r border-neutral-dark-1 cursor-pointer"
       (click)="selectedChange.emit(item)"
       [ngClass]="
         item === selected
-          ? 'bg-emerald-700 border-t-0 border-b-0'
-          : 'hover:bg-emerald-700/25'
+          ? 'bg-secondary border-t-0 border-b-0'
+          : 'hover:bg-secondary-light/50'
       "
     >
       <span
-        class="text-base text-gray-500 font-semibold"
-        [ngClass]="item === selected ? 'text-white text-xl' : ''"
+        class="text-base text-neutral-dark-4 font-semibold"
+        [ngClass]="item === selected ? 'text-neutral-light-1 text-xl' : ''"
         >{{ item }}</span
       >
     </div>
