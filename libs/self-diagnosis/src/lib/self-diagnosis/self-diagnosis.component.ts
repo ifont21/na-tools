@@ -74,6 +74,7 @@ export class SelfDiagnosisComponent implements OnInit, OnChanges {
       outerStrokeColor: '#78C000',
       innerStrokeColor: '#C7E596',
       animationDuration: 300,
+      startFromZero: false
     }),
     UiRangeSelectionComponentModule,
   ],

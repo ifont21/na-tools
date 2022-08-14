@@ -1,14 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import {
-  InteractionState,
-  RangeQuestion,
-  QuestionStat,
-  Step,
-  Config,
-  State,
-  StateSurveyQuestions,
-} from './types';
+import { Config, State, StateSurveyQuestions } from './types';
 
 @Injectable({
   providedIn: 'root',
@@ -39,7 +31,7 @@ export class ProcessInteractionService {
       ...currentState,
       questionStat: {
         current: 0,
-        outOf: config.questions.length, 
+        outOf: config.questions.length,
       },
       surveyState,
       introduction: config.introduction,
@@ -60,7 +52,6 @@ export class ProcessInteractionService {
             : 0,
       },
     });
-    console.log(this.interaction$.value);
 
     return currentState.index + 1;
   }

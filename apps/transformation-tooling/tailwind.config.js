@@ -31,6 +31,11 @@ module.exports = {
         DEFAULT: '#EC645B',
         dark: '#E53124',
       },
+      warning: {
+        light: '#FFE085',
+        DEFAULT: '#FFC100',
+        dark: '#FF8200',
+      },
       neutral: {
         lighter: '#FFFFFF',
         'light-2': '#F5F4F4',
