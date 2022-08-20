@@ -47,7 +47,7 @@ const criteriaDefinition: CriteriaDefinition[] = [
   selector: 'app-ui-result',
   template: `
     <div class="text-center space-y-12">
-      <h2 class="text-2xl font-black text-primary">Final result</h2>
+      <h2 class="text-2xl font-black text-primary">Resultado final</h2>
       <div class="flex justify-center">
         <figure class="w-72 rounded-lg p-4" [ngClass]="colorResult">
           <img [src]="imagePath" alt="" />

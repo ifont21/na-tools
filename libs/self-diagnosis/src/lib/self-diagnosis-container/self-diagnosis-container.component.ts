@@ -73,7 +73,7 @@ export class SelfDiagnosisContainerComponent implements OnInit {
   onNextQuestion(rate: number): void {
     this.interaction.next((state: SelfDiagnosisInteractionState<Question>) => {
       const list = state.list.map((question, i) => {
-        if (i === state.index && !question.viewed) {
+        if (i === state.index) {
           return {
             ...question,
             value: rate,

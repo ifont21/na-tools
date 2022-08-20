@@ -7,12 +7,12 @@
       <h2 class="mb-8">
         <span
           class="block mb-4 text-base text-neutral-dark-3 font-regular tracking-tight"
-          >Survey name</span
+          >Nombre de encuesta</span
         >
         <p
           class="block text-xl font-semibold tracking-normal font-display pb-2"
         >
-          Self Diagnosis, index of Digital transformation of the organization
+          Auto diagnostico, indice de tranformacion digital de la organizacion
         </p>
       </h2>
     </header>
@@ -44,7 +44,7 @@
         </svg-icon>
         <div class="flex justify-between items-center">
           <span class="text-neutral-dark-2 text-sm font-semibold"
-            >Questions</span
+            >Preguntas</span
           >
           <span class="text-lg text-primary font-black">{{
             survey?.questionStat?.total
@@ -62,7 +62,7 @@
         </svg-icon>
         <div class="flex justify-between items-center">
           <span class="text-neutral-dark-2 text-sm font-semibold"
-            >Responses</span
+            >Respondidas</span
           >
           <span class="text-lg text-primary font-black">{{
             survey?.questionStat?.amountAnswered
@@ -84,7 +84,7 @@
             >
             </svg-icon>
           </div>
-          <span class="text-primary font-black">Back Home</span>
+          <span class="text-primary font-black">Volver a inicio</span>
         </a>
       </div>
       <ng-container *ngIf="!survey?.completed">
@@ -114,7 +114,7 @@
             </div>
 
             <p class="text-neutral-dark-3 font-bold">
-              Please select one to continue.
+              Por favor selecciona una para continuar.
             </p>
 
             <div class="w-full">
@@ -124,8 +124,8 @@
               <div
                 class="flex w-full justify-between mt-2 text-neutral-darker font-semibold"
               >
-                <span>Not at all</span>
-                <span>Absolutely</span>
+                <span>No, para nada</span>
+                <span>Claro que si</span>
               </div>
             </div>
           </div>
@@ -144,7 +144,7 @@
                 [applyClass]="true"
               >
               </svg-icon>
-              <span class="font-semibold">previous</span>
+              <span class="font-semibold">Anterior</span>
             </button>
 
             <ng-container
@@ -155,7 +155,7 @@
                 (click)="onNextQuestion()"
                 [disabled]="currentRate === 0"
               >
-                <span class="font-semibold">NEXT</span>
+                <span class="font-semibold">SIGUIENTE</span>
                 <svg-icon
                   src="assets/right-arrow.svg"
                   class="w-4 mr-4 h-auto fill-neutral-lighter"
@@ -189,115 +189,15 @@
     </div>
   </section>
 </div>
-<!-- <section class="flex w-full h-full">
-    <div class="basis-3/4 flex flex-col justify-between">
-        <div class="px-10 pt-12 pb-8 flex flex-col space-y-72">
-            <header class="w-3/4">
-                <h1 class="text-3xl font-semibold tracking-tight font-display">
-                    Self Diagnosis</h1>
-                <p class="text-xl text-gray-600 font-semibold tracking-tight font-display">Index of Digital
-                    transformation of the organization</p>
-            </header>
-
-            <ng-container *ngIf="survey?.completed">
-                <app-ui-result [answers]="survey?.list"></app-ui-result>
-            </ng-container>
-
-            <ng-container *ngIf="survey?.started && !survey?.completed">
-                <div class="flex justify-center items-center">
-                    <div class="flex flex-col items-center max-w-4xl space-y-12">
-                        <div class="inline-flex space-x-2 text-2xl tracking-tight">
-                            <span class="font-bold">Q{{ survey?.currentQuestion?.position}}</span>
-                            <p class="text-gray-600">{{ survey?.currentQuestion?.title}}</p>
-                        </div>
-
-                        <p class="text-center text-gray-600">{{ survey?.currentQuestion?.description}}</p>
-                        <div class="w-3/4">
-                            <app-ui-range-selection [(selected)]="currentRate">
-                            </app-ui-range-selection>
-
-                            <div class="flex w-full justify-between mt-2 text-gray-600 font-semibold">
-                                <span>Not at all</span>
-                                <span>Absolutely</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </ng-container>
-
-            <ng-container *ngIf="!survey?.started">
-                <div class="flex justify-center items-center">
-                    <div class="flex flex-col items-center space-y-8">
-                        <div class="text-2xl tracking-tight">
-                            <p class="text-gray-600">{{survey?.introduction}}</p>
-                        </div>
-                        <button class="inline-block border bg-blue-800 py-3 px-12 rounded-xl"
-                            (click)="startSurvey.emit()">
-                            <span class="text-xl font-bold text-gray-500 text-white">Start</span>
-                        </button>
-                    </div>
-                </div>
-            </ng-container>
-
-        </div>
-
-        <ng-container *ngIf="survey?.started && !survey?.completed">
-            <div class="self-start w-full flex justify-between border-t px-10 py-8">
-                <button class="flex items-center space-x-2 border border-gray-400 py-3 px-8 rounded-xl text-gray-500"
-                    (click)="previousQuestion.emit()" [disabled]="survey?.currentQuestion?.isFirst">
-                    <svg-icon src="assets/left-arrow.svg" class="w-4 h-auto fill-gray-500" [applyClass]="true">
-                    </svg-icon>
-                    <span class="font-semibold">previous</span>
-                </button>
-
-                <ng-container *ngIf="!survey?.currentQuestion?.isLast; else complete">
-                    <button class="flex items-center space-x-6 bg-blue-800 py-3 px-8 rounded-xl text-white"
-                        (click)="onNextQuestion()" [disabled]="currentRate === 0">
-                        <span class="font-semibold">NEXT</span>
-                        <svg-icon src="assets/right-arrow.svg" class="w-4 mr-4 h-auto fill-white" [applyClass]="true">
-                        </svg-icon>
-                    </button>
-                </ng-container>
-
-                <ng-template #complete>
-                    <button class="flex items-center space-x-6 bg-emerald-800 py-3 px-8 rounded-xl text-white"
-                        (click)="onCompleteSurvey()" [disabled]="currentRate === 0">
-                        <span class="font-semibold">Complete</span>
-                        <svg-icon src="assets/right-arrow.svg" class="w-4 mr-4 h-auto fill-white" [applyClass]="true">
-                        </svg-icon>
-                    </button>
-                </ng-template>
-            </div>
-        </ng-container>
-
+<ul>
+  <li *ngFor="let item of survey?.list">
+    <div>
+      <label class="mr-4">Title</label>
+      <span>{{ item.title }}</span>
     </div>
-    <aside class="basis-1/4 min-w-[30%] bg-sky-50 px-8 py-12 flex flex-col space-y-8">
-        <h2 class="text-gray-500 font-semibold text-2xl">Self Diagnosis: Index of Digital transformation of the
-            organization</h2>
-        <p class="text-gray-500 text-lg">Your score will be shown after the survey</p>
-
-        <div>
-            <h3 class="text-gray-600 font-bold text-lg">Questions</h3>
-            <span class="text-2xl text-gray-500 font-light">{{ survey?.questionStat?.total}}</span>
-        </div>
-
-        <div>
-            <h3 class="text-gray-600 font-bold text-lg">Completion time</h3>
-            <span class="text-2xl text-gray-500 font-light">{{survey?.completionTime}} mins</span>
-        </div>
-
-        <ng-container *ngIf="survey?.started">
-            <div>
-                <h3 class="text-gray-600 font-bold text-lg">Completion Rate</h3>
-                <span class="text-2xl text-gray-500 font-light">{{ survey?.questionStat?.amountAnswered}} / {{
-                    survey?.questionStat?.total}}</span>
-                <div class="flex justify-center items-center h-80">
-                    <circle-progress [percent]="survey?.progress || 0" [radius]="100" [outerStrokeWidth]="16"
-                        [innerStrokeWidth]="8" [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'"
-                        [animation]="true" [animationDuration]="300"></circle-progress>
-                </div>
-            </div>
-        </ng-container>
-
-    </aside>
-</section> -->
+    <div>
+      <label class="mr-4">Value</label>
+      <span>{{ item.value }}</span>
+    </div>
+  </li>
+</ul>
