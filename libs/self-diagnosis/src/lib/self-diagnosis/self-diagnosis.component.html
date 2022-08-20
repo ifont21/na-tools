@@ -1,5 +1,5 @@
 <div class="flex w-full h-full">
-  <section class="bg-neutral-lighter basis-1/5 min-w-[28rem] px-8 py-10">
+  <section class="bg-neutral-lighter hidden md:basis-1/5 md:block md:min-w-[28rem] px-8 py-10">
     <header>
       <div class="mb-20">
         <h1 class="font-semibold text-3xl font-body">NA Tools</h1>
@@ -131,10 +131,10 @@
           </div>
 
           <div
-            class="self-start w-full flex justify-center flex-wrap space-x-6"
+            class="self-start w-full flex justify-center flex-wrap sm:space-x-6"
           >
             <button
-              class="flex flex-none w-64 justify-center items-center space-x-4 border border-neutral-dark-1 py-4 px-8 rounded-xl text-neutral-dark-2"
+              class="flex flex-none w-full sm:w-64 justify-center items-center space-x-4 border border-neutral-dark-1 py-4 px-8 rounded-xl text-neutral-dark-2 mb-4 sm:mb-0"
               (click)="previousQuestion.emit()"
               [disabled]="survey?.currentQuestion?.isFirst"
             >
@@ -151,7 +151,7 @@
               *ngIf="!survey?.currentQuestion?.isLast; else complete"
             >
               <button
-                class="flex flex-none w-64 justify-center items-center space-x-4 bg-primary py-4 px-8 rounded-xl text-neutral-lighter disabled:opacity-75"
+                class="flex flex-none w-full sm:w-64 justify-center items-center space-x-4 bg-primary py-4 px-8 rounded-xl text-neutral-lighter disabled:opacity-75"
                 (click)="onNextQuestion()"
                 [disabled]="currentRate === 0"
               >
@@ -167,7 +167,7 @@
 
             <ng-template #complete>
               <button
-                class="flex flex-none w-64 justify-center items-center space-x-4 bg-secondary py-3 px-8 rounded-xl text-neutral-lighter disabled:opacity-75"
+                class="flex flex-none w-full sm:w-64 justify-center items-center space-x-4 bg-secondary py-3 px-8 rounded-xl text-neutral-lighter disabled:opacity-75"
                 (click)="onCompleteSurvey()"
                 [disabled]="currentRate === 0"
               >
